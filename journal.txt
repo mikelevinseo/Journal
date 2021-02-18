@@ -1,0 +1,326 @@
+# Mike Levin's Temporary Daily Journal
+
+--------------------------------------------------------------------------------
+## Wed Feb 17, 2021
+### My schtick: Crank out minmally edited genuine videos that parallels mys day-to-day work
+
+- Zero-in on an interesting topic every day or two
+- Write about it here and get it down to the essense
+- Create more genuine and in-context videos than most alternatives
+
+### Video 1:
+The topic I want/need to get in this morning is Graphics on WSL 2 (Windows Subsystem for Linux)
+
+Sept 2020, Microsoft announced supporting this natively. Do I still do the video? Yes!
+https://www.zdnet.com/article/linux-graphical-apps-coming-to-windows-subsystem-for-linux/
+
+- Linux-side, it's another thing to put in .bash_profile / easily undone
+  - Demonstrate cat /etc/resolv.conf (to get IP of WSL instance on VLAN)
+  - Demonstrate the magic of Unix pipes (cat | grep | awk)
+  - export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+
+- Windows-side, it's:
+  - Download & Install VcXSrv
+  - Find and launch xlaunch.exe (to make config file)
+  - Settings (changes from default): 
+    - Multiple windows
+    - Dispay number: 0
+    - Start with no client
+    - Saving into C:\Users\mikle\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+- Sudo apt-get install x11-apps
+  - xeyes
+  - xclock
+  - xcalc
+
+- sudo apt-get install chromium-browser (as a bonus?)
+  (ended up being a Chrome install from .deb download)
+
+
+
+
+
+### Video 2:
+
+- GitHub & ssh-keygen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+## Tue Feb 16, 2021
+### Make editing Windows Terminal settings with Linux vim easy (like it is with VSCode)
+
+TODO
+- Edit the long vim command to edit settings.json into .bash_profile (just type settings)
+- Hide tab on Windows Terminal by default (for focus mode / demo Ctrl+Shift+T)
+  "alwaysShowTabs": false
+  "showTabsInTitlebar": false
+
+- Make font big and a cursor green box (as opposed to beam)
+  "fontSize" : 20,
+  "cursorColor" : "#FFFF00",
+  "cursorShape" : "filledBox"
+
+- Add Anaconda prompt to Microsoft Terminal
+  - %windir%\System32\cmd.exe "/K" C:\Users\mikle\Anaconda3\Scripts\activate.bat C:\Users\mikle\Anaconda3
+  - From PowerShell New-Guid
+
+- Put my .vimrc on new Ubuntu
+- Linux Graphical Subsystem using an X-Server (for Windows)
+- OBS & Livestreaming
+- Install VSCode (don't walk away from power)
+
+--------------------------------------------------------------------------------
+## Tue Feb 16, 2021
+### Update your To-Do List
+
+Uh Oh! Better make it a repo! Introduce the nice folks to git.
+
+You have Linux access to the Windows filesystem after all.
+
+You don't even need the Windows version of git (or vim) now.
+
+Ugh, people want that Linux graphics subsystem video.
+
+I also know that's what the YouTube algorithm will reward.
+
+But do I care?
+
+Am I one of them hyperbolic, bomastic and borish SEOs of the YouTube space?
+
+No! No, I'm not.
+
+So y'all can wait a video or two before I'm making googly X-Eyes at you again.
+
+Go back up this journal as a new git repo. Do Github later (because of complexity of keys).
+
+Use vim to change default of Windows Terminal to Ubuntu. Move guid to default.
+
+But where? Now with no VSCode installed, we pay the penalty. Go on the hunt...
+
+%LOCALAPPDATA%\Packages\ [Windows Terminal blah blah] \LocalState\settings.json
+/mnt/c/Users/mikle/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
+
+1. Make fullscreen "launchMode": "maximized"
+2. Set fontsize
+3. Turn off tabs "alwaysShowTabs" : false
+4. Default to Ubuntu "defaultProfile" : "{ [guid of Ubuntu] }",
+
+Install my .vimrc (from Github)
+
+Love-worthy
+Choose doing it OVER other things in life
+Gamification of Tech to lead you down the path to company-dependency (never stop paying)
+Alternative path that uses all the same habit-building tricks that leads you down the path of FOSS
+Love-worthy FOSS
+To promote happiness
+Adreliline, Dopamine, Seratonin 
+Feeding human needs
+Hunting tools of the modern information age
+That don't in-turn rule you
+Tool selection today will rule your future
+Don't make yourself dependent on the wrong tools.
+
+--------------------------------------------------------------------------------
+## Mon Feb 15, 2021
+### Happy President's Day
+
+### Video 1: Ubuntu Uninstall & Reinstall
+Uninstall the upgraded Ubuntu 20.04 and reinstall a fresh one, given the new WSL 2 default.
+
+Current one was installed under WSL 1.
+I had to upgrade it after activating Windows VM-mode.
+But now I can demonstrate a fresh install of a WSL2 version of Ubuntu 2 from MS Store.
+
+### Video 2: Install Windows Terminal / Demonstrate the "VSCode Trap"
+
+History: Teletype macines, TTY Terminals, VT100, telnet, SSH, blah, blah, blah.
+
+So far, we've avoided VSCode on our machine... demonstrate.
+But the benefits of the unified interface to terminals in Windows makes it worth it.
+How does an "Old School" tool like Terminal land you VSCode on your machine?
+
+Just watch.
+
+- Install Windows Terminal from Microsoft Store (choose version)
+- Demonstrate Tabs, in general
+- Show Preferences... BAM!
+
+The VSCode trap.
+
+Under Globals, set
+"launchMode":"maximized",
+"alwaysShowTabs" : false,
+
+Change your default profile to Ubuntu.
+
+Launch Ubuntu.
+
+Show ls -la
+
+Demonstrate the explorer.exe . trick. Put ~/ on Windows quickstart.
+
+Create a .bash_profile and put alias open="explorer.exe ." in it.
+
+cd into root and find your way to Windows home.
+
+Add that path as an alias to .bash_profile too.
+
+Echo into or touch a file to show it being created from Linux side and appearing in Windows side.
+
+Thank the nice people and say goodbye.
+
+--------------------------------------------------------------------------------
+## Sun Feb 14, 2021
+### Happy Valentine's Day / Video 2: 
+
+Whether you're an actual software developer, or a casual programs-for-work coder like me,
+when platforms go obsolute, so do you if you haven't hoped off of it onto the next platform du jour.
+You will think fads are trends and get suckered into a soul-sucking young person's game.
+This is fine when you're young, but when things are supposed to always be getting easier for you, 
+this can be a problem. Well, there's some tech that won. You can bank on it in the long term.
+
+I made a lot of tech platform choice mistakes.
+Whoa was me, boo hoo.
+We don't get fooled again.
+Don't get fooled again, no, no
+
+So I went on a hunt... when I was about 40 years old.
+- First, I found Linux.
+- Second, I found Python. 
+- Third, I found vim (and git).
+
+Microsoft knows this.
+- First, they built-in Linux.
+- Second, they hired the creator of Python.
+- Third, they bought Github (and wrote VSCode)     ...not the actual order they did it.
+
+And so in the spirit of bringing all the benefit of my work and theirs to you, I present to you...
+
+How to install Linux on Windows 10.
+
+Warning: this is the less than satisfying type-in style Linux (a.k.a. a headless server)
+
+I'll show you how to add graphics support with an X-Windows server.
+
+--------------------------------------------------------------------------------
+## Sun Feb 14, 2021
+### Happy Valentine's Day
+
+Loving and being loved is important, and it's okay to celebrate it.
+If you are feeling disconnected, then come learn Python with me.
+
+### Video 1: JupyterLabs on a Keyboard Shortcut
+ 
+It's time to start forming your muscle memory.
+You could at this point do it around VSCode.
+That's what most people would do.
+I propose another way that lets you just start "thinking in Python".
+When it comes to your actual text editor for life, I'e got another story to tell.
+But for today, it's really about making reaching for Python 
+for learning or answer vquestions extremely natural and easy... an odd sort of habit.
+
+When last we left off, I installed Anaconda with Python 3.8 on 64 Bit Windows.
+I ran Jupyter Notebook and JupyterLab and did the "Hello World" program on each.
+And I realized how much easier Jupyter Notebook was to find and run. We fix.
+
+Whatever Anaconda did for Notebooks is good enough for Lab. Let's go find out...
+
+C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3 C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\Scripts\jupyter-notebook-script.py "%USERPROFILE%/"
+C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3 C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\Scripts\jupyter-lab-script.py "%USERPROFILE%/"
+
+Placeholder before vim. Vim is the text editor for life.
+Just as I'm in Notepad right now, use the right and available tool for the job.
+Sometimes that's your 80/20-rule native programming language (muscle memory)
+Sometimes it's not.
+
+
+--------------------------------------------------------------------------------
+## Fri Feb 12, 2021
+
+- I am on version 1909 of Windows. Upgrade!
+  - WSL2 probably not possible without
+  - 2021-02 Cumulative Update for Windows 10 Version 1909 for x64-based Systems (KB5001028)
+  - This upgrade a priority because I want this journal in my old VIM environment
+  - Stared the download. This'll take awhile. Also download Anaconda!
+
+%windir%\System32\cmd.exe "/K" C:\ProgramData\Anaconda3\Scripts\activate.bat C:\ProgramData\Anaconda3
+
+I would like an Anaconda prompt on my unified Microsoft Terminal please.
+
+Okay, the Anaconda install video went very well. I was able to do the whole install
+on screen capture without having to pause recording. Anaconda seems smaller. 
+It certainly seems different now that they went commercial license. Hmmm, next step? WSL2 (the big one)?
+
+
+
+--------------------------------------------------------------------------------
+## Thu Feb 11, 2021
+### Doing the Easiest Python Install on Windows 10 in Early 2021
+
+Make video about the 3 good paths to Python on Windows 10 
+
+1. Easiest & most offical, but difficult for the beginner (Command Prompt / Microsoft store)
+2. Best for the beginner, but not official and big download (Anaconda)
+3. Best overall, on Linux... Windows Subsystem for Linux (WSL2)
+
+Demonstrate path #1. Done.
+
+--------------------------------------------------------------------------------
+## Wed Feb 10, 2021
+### Setting Up Daily Journal (and making Windows 10 usable)
+
+TODO
+- OBS & Livestreaming
+- Add Anaconda prompt to Microsoft Terminal
+  - %windir%\System32\cmd.exe "/K" C:\Users\mikle\Anaconda3\Scripts\activate.bat C:\Users\mikle\Anaconda3
+- Install VSCode (don't walk away from power)
+
+DONE
+- Install the unified Microsoft Terminal
+- Install Ubuntu 20.04
+- Show 3 paths to Python in Windows 10 in Early 2021
+- Demonstrate Levinux and talk about Linux distribution software repos
+- Make Mouse Pointer big & green
+- Turn on night mode
+- Turn off Notifications (Action Center word balloon in lower right)
+- Show programs in Start Menu
+- Make icons smaller
+- Install ArtRage
+- Make Taskbar icons show on all Virtual Desktops
+- Change 3 finger trakpad swoosh to switch virtual desktops
+- Get rid of Top Apps in Search Box (hide search box?)
+- Hide Clock
+- Setup Journal
+- Show the Anaconda install and other story of Python on Windows
+- Do a Jupyter Labs Hello World (again)
+
+Important concepts about daily journal:
+1. It will be a git repo, probably a private one on Github
+   - It will be with you your entire life
+   - You can keep your journal on multiple machines
+2. It's always loaded. 
+   - It's always full-screen on your 1st Virtual Desktop
+   - It's in a fixed position and you always know where to find it
+   - It's your way of maintaining human statefulness
